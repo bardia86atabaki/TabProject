@@ -1,0 +1,54 @@
+
+.active {
+  border: 2px solid currentColor;
+  border-radius: 3rem;
+  color: yellow;
+  font-family: roboto;
+  overflow: hidden;
+  width: 100px;
+  position: relative;
+  height: 50px;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+}
+.active::after {
+  background-color: yellow;
+  border-radius: 3rem;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+.active:hover::after {
+  transform: translate(0, 0);
+}
+.active:hover {
+  border: 2px solid transparent;
+  color: indigo;
+  transform: scale(1.05);
+  will-change: transform;
+}
+.tab-componets {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+.TabContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-family: roboto;
+  margin-top: 50px;
+}
